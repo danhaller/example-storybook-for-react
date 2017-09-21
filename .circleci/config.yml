@@ -1,0 +1,14 @@
+defaults: &defaults
+working_directory: ~/tmp
+docker:
+  - image: node:6
+
+version: 2
+jobs:
+  build_and_test:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: test
+          command: npm run snapshot
